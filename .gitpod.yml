@@ -1,0 +1,42 @@
+tasks:
+  - name: Setup PostgreSQL
+    init: |
+      sudo apt-get update
+      sudo apt-get install -y postgresql postgresql-contrib
+      sudo service postgresql start
+      sudo -u postgres psql -c "CREATE DATABASE real_estate_portal;"
+      sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"
+
+  - name: Backend Server
+    init: |
+      cd real-estate-portal/backend
+      npm install
+      cp .env.example .env
+    command: |
+      cd real-estate-portal/backend
+      npm run dev
+
+  - name: Frontend Server
+    init: |
+      cd real-estate-portal/frontend
+      npm install
+      cp .env.example .env
+    command: |
+      cd real-estate-portal/frontend
+      npm start
+
+ports:
+  - port: 3000
+    onOpen: open-preview
+    visibility: public
+  - port: 5000
+    onOpen: notify
+    visibility: public
+  - port: 5432
+    onOpen: ignore
+    visibility: private
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
+    - esbenp.prettier-vscode
