@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Website Wireframes - Real Estate Portal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            padding: 20px;
+        }
+        
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 15px 30px;
+        }
+        
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+            margin-right: auto;
+        }
+        
+        .nav-link {
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 80px auto 0;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 36px;
+        }
+        
+        .page-section {
+            background: white;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .page-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+        }
+        
+        .page-title {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .page-description {
+            font-size: 14px;
+            opacity: 0.95;
+        }
+        
+        .wireframe {
+            padding: 30px;
+            background: white;
+        }
+        
+        /* Wireframe Elements */
+        .header-bar {
+            background: #2c3e50;
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+        
+        .nav-item {
+            padding: 8px 15px;
+            background: #34495e;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 30px;
+            text-align: center;
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .hero-title {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+        
+        .hero-subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .search-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .search-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .search-input {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f8f9fa;
+        }
+        
+        .btn-primary {
+            background: #e74c3c;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            cursor: pointer;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .card-image {
+            height: 200px;
+            background: linear-gradient(45deg, #bdbdbd 25%, #9e9e9e 25%, #9e9e9e 50%, #bdbdbd 50%);
+            background-size: 20px 20px;
+            position: relative;
+        }
+        
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #27ae60;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .card-text {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .sidebar-layout {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 30px;
+        }
+        
+        .sidebar {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            height: fit-content;
+        }
+        
+        .sidebar-section {
+            margin-bottom: 25px;
+        }
+        
+        .sidebar-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        .filter-item {
+            padding: 10px;
+            margin-bottom: 8px;
+            background: white;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        .table th {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #dee2e6;
+        }
+        
+        .table td {
+            padding: 15px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn-small {
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 13px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-success {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .btn-danger {
+            background: #e74c3c;
+            color: white;
+        }
+        
+        .btn-info {
+            background: #3498db;
+            color: white;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #dee2e6;
+        }
+        
+        .tab {
+            padding: 15px 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 30px 20px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-link {
+            margin-bottom: 10px;
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+        
+        .annotation {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+        
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .property-detail-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+        
+        .image-gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .main-image {
+            height: 400px;
+            background: linear-gradient(45deg, #bdbdbd 25%, #9e9e9e 25%);
+            background-size: 20px 20px;
+            border-radius: 10px;
+        }
+        
+        .thumbnail-grid {
+            display: grid;
+            grid-template-rows: repeat(4, 1fr);
+            gap: 10px;
+        }
+        
+        .thumbnail {
+            height: 95px;
+            background: linear-gradient(45deg, #bdbdbd 25%, #9e9e9e 25%);
+            background-size: 20px 20px;
+            border-radius: 5px;
+        }
+        
+        .info-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .price-tag {
+            font-size: 32px;
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 15px;
+        }
+        
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .spec-item {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .spec-value {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .spec-label {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .contact-card {
+            background: white;
+            border: 2px solid #667eea;
+            padding: 25px;
+            border-radius: 10px;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .service-card {
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: #667eea;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+        }
+        
+        .multi-step {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .step {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            position: relative;
+        }
+        
+        .step.active {
+            background: #667eea;
+            color: white;
+        }
+        
+        .step.completed {
+            background: #27ae60;
+            color: white;
+        }
+        
+        .step::after {
+            content: '→';
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #666;
+        }
+        
+        .step:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="nav-content">
+            <div class="nav-title">🏢 Complete Website Wireframes</div>
+            <a href="#page1" class="nav-link">Homepage</a>
+            <a href="#page2" class="nav-link">Search Results</a>
+            <a href="#page3" class="nav-link">Property Details</a>
+            <a href="#page4" class="nav-link">Post Property</a>
+            <a href="#page5" class="nav-link">User Dashboard</a>
+            <a href="#page6" class="nav-link">Services</a>
+            <a href="#page7" class="nav-link">Admin</a>
+            <a href="#page8" class="nav-link">Super Admin</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Complete Website Wireframes - Real Estate Portal</h1>
+        
+        <!-- PAGE 1: HOMEPAGE -->
+        <div id="page1" class="page-section">
+            <div class="page-header">
+                <div class="page-title">1. Homepage</div>
+                <div class="page-description">Main landing page with hero search, featured properties, services, and quick links</div>
+            </div>
+            <div class="wireframe">
+                <!-- Header -->
+                <div class="header-bar">
+                    <div class="logo">🏠 PropertyHub</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">Buy</li>
+                        <li class="nav-item">Rent</li>
+                        <li class="nav-item">Sell</li>
+                        <li class="nav-item">New Projects</li>
+                        <li class="nav-item">Services</li>
+                        <li class="nav-item">Resources</li>
+                    </ul>
+                    <div style="display: flex; gap: 10px;">
+                        <div class="nav-item" style="background: #e74c3c;">+ Post Property FREE</div>
+                        <div class="nav-item">Login / Sign Up</div>
+                    </div>
+                </div>
+                
+                <div class="annotation">
+                    <strong>Header Section:</strong> Sticky navigation with logo, main categories, post property CTA, and authentication buttons
+                </div>
+                
+                <!-- Hero Section -->
+                <div class="hero-section">
+                    <div class="hero-title">Find Your Dream Property</div>
+                    <div class="hero-subtitle">Search from 10 Lakh+ properties across India</div>
+                    
+                    <div class="search-box">
+                        <div class="tabs">
+                            <button class="tab active">Buy</button>
+                            <button class="tab">Rent</button>
+                            <button class="tab">New Projects</button>
+                            <button class="tab">PG/Co-living</button>
+                            <button class="tab">Commercial</button>
+                        </div>
+                        
+                        <div class="search-grid">
+                            <div class="search-input">📍 Region (CBE / Salem / Tirupur)</div>
+                            <div class="search-input">📌 Location (Saravanampatti)</div>
+                            <div class="search-input">💰 Budget (5L - 10L - 15L)</div>
+                            <div class="search-input">🏘️ Property Type (All)</div>
+                        </div>
+                        <button class="btn-primary">🔍 Search Properties</button>
+                    </div>
+                </div>
+                
+                <div class="annotation">
+                    <strong>Hero Search:</strong> Primary conversion element with property type tabs and cascading filters (Region → Location → Budget → Type)
+                </div>
+                
+                <!-- Quick Links -->
+                <h3 style="margin: 30px 0 20px; font-size: 24px; color: #2c3e50;">Popular Searches</h3>
+                <div class="content-grid">
+                    <div class="card">
+                        <div class="card-image"></div>
+                        <div class="card-content">
+                            <div class="card-title">Apartments in Coimbatore</div>
+                            <div class="card-text">1,250+ Properties</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image"></div>
+                        <div class="card-content">
+                            <div class="card-title">DTCP Plots in Salem</div>
+                            <div class="card-text">890+ Properties</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image"></div>
+                        <div class="card-content">
+                            <div class="card-title">Villas in Tirupur</div>
+                            <div class="card-text">650+ Properties</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Featured Properties -->
+                <h3 style="margin: 30px 0 20px; font-size: 24px; color: #2c3e50;">Featured Properties</h3>
+                <div class="content-grid">
+                    <div class="card">
+                        <div class="card-image">
+                            <div class="badge">✓ SV VERIFIED</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="price-tag" style="font-size: 24px;">₹ 45 Lakhs</div>
+                            <div class="card-title">DTCP Approved Plot</div>
+                            <div class="card-text">📍 Saravanampatti, Coimbatore<br>📐 1200 sqft • 🏷️ Owner</div>
+                            <div class="btn-group" style="margin-top: 15px;">
+                                <button class="btn-small btn-info" style="flex: 1;">Contact</button>
+                                <button class="btn-small" style="border: 1px solid #3498db; background: white; color: #3498db;">❤️</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <div class="badge">✓ SV VERIFIED</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="price-tag" style="font-size: 24px;">₹ 75 Lakhs</div>
+                            <div class="card-title">2 BHK Independent House</div>
+                            <div class="card-text">📍 Kovilpalayam, Coimbatore<br>🛏️ 2 BHK • 📐 900 sqft</div>
+                            <div class="btn-group" style="margin-top: 15px;">
+                                <button class="btn-small btn-info" style="flex: 1;">Contact</button>
+                                <button class="btn-small" style="border: 1px solid #3498db; background: white; color: #3498db;">❤️</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-image">
+                            <div class="badge" style="background: #e74c3c;">NEW</div>
+                        </div>
+                        <div class="card-content">
+                            <div class="price-tag" style="font-size: 24px;">₹ 1.2 Cr</div>
+                            <div class="card-title">3 BHK Villa</div>
+                            <div class="card-text">📍 Salem<br>🛏️ 3 BHK • 📐 1800 sqft</div>
+                            <div class="btn-group" style="margin-top: 15px;">
+                                <button class="btn-small btn-info" style="flex: 1;">Contact</button>
+                                <button class="btn-small" style="border: 1px solid #3498db; background: white; color: #3498db;">❤️</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Services Section -->
+                <h3 style="margin: 30px 0 20px; font-size: 24px; color: #2c3e50;">Our Services</h3>
+                <div class="service-grid">
+                    <div class="service-card">
+                        <div class="service-icon"></div>
+                        <div class="card-title">📐 Survey Support</div>
+                        <div class="card-text">Digital, Land, DTCP Plot verification</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"></div>
+                        <div class="card-title">⚖️ Legal Support</div>
+                        <div class="card-text">Documentation & legal advice</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"></div>
+                        <div class="card-title">🏗️ Construction</div>
+                        <div class="card-text">2D/3D plans, elevation, interior</div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"></div>
+                        <div class="card-title">💰 Finance</div>
+                        <div class="card-text">Home loans & EMI calculator</div>
+                    </div>
+                </div>
+                
+                <!-- Footer -->
+                <div class="footer">
+                    <div class="footer-grid">
+                        <div>
+                            <div class="footer-title">Company</div>
+                            <ul class="footer-links">
+                                <li class="footer-link">About Us</li>
+                                <li class="footer-link">Careers</li>
+                                <li class="footer-link">Contact Us</li>
+                                <li class="footer-link">Terms of Use</li>
+                                <li class="footer-link">Privacy Policy</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="footer-title">For Customers</div>
+                            <ul class="footer-links">
+                                <li class="footer-link">Post Property</li>
+                                <li class="footer-link">Property Valuation</li>
+                                <li class="footer-link">Home Loans</li>
+                                <li class="footer-link">Offers & News</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="footer-title">Resources</div>
+                            <ul class="footer-links">
+                                <li class="footer-link">Blog</li>
+                                <li class="footer-link">Property Guides</li>
+                                <li class="footer-link">Area Guides</li>
+                                <li class="footer-link">Market Reports</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="footer-title">Connect With Us</div>
+                            <ul class="footer-links">
+                                <li class="footer-link">📧 Email</li>
+                                <li class="footer-link">📱 Mobile App</li>
+                                <li class="footer-link">💬 WhatsApp</li>
+                                <li class="footer-link">📞 Helpline</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div style="text-align: center; padding-top: 20px; border-top: 1px solid #34495e; color: #bdc3c7;">
+                        © 2025 PropertyHub. All Rights Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PAGE 2: SEARCH RESULTS -->
+        <div id="page2" class="page-section">
+            <div class="page-header">
+                <div class="page-title">2. Search Results / Property Listing Page</div>
+                <div class="page-description">Browse properties with advanced filters, sorting, and map view</div>
+            </div>
+            <div class="wireframe">
+                <div class="header-bar">
+                    <div class="logo">🏠 PropertyHub</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">Buy</li>
+                        <li class="nav-item">Rent</li>
+                        <li class="nav-item">Sell</li>
+                        <li class="nav-item">Services</li>
+                    </ul>
+                    <div style="display: flex; gap: 10px;">
+                        <div class="nav-item" style="background: #e74c3c;">+ Post Property</div>
+                        <div class="nav-item">👤 My Account</div>
+                    </div>
+                </div>
+                
+                <div class="breadcrumb" style="margin: 20px 0;">
+                    Home → Properties → Coimbatore → Saravanampatti
+                </div>
+                
+                <div class="sidebar-layout">
+                    <!-- Sidebar Filters -->
+                    <div class="sidebar">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <h3 style="font-size: 20px; color: #2c3e50;">Filters</h3>
+                            <button style="background: none; border: none; color: #e74c3c; cursor: pointer; font-weight: 600;">Reset All</button>
+                        </div>
+                        
+                        <div class="sidebar-section">
+                            <div class="sidebar-title">Region</div>
+                            <select class="form-control">
+                                <option>Coimbatore</option>
+                                <option>Salem</option>
+                                <option>Tirupur</option>
+                            </select>
+                        </div>
+                        
+                        <div class="sidebar-section">
+                            <div class="sidebar-title">Location</div>
+                            <div class="filter-item">
+                                <input type="checkbox"> Saravanampatti (156)
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox"> Kovilpalayam (89)
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox"> Annur (67)
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-section">
+                            <div class="sidebar-title">Budget</div>
+                            <div style="padding: 15px; background: white; border-radius: 5px;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                    <span>₹5L</span>
+                                    <span>₹30L+</span>
+                                </div>
+                                <div style="height: 5px; background: #667eea; border-radius: 5px;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-section">
+                            <div class="sidebar-title">Property Type</div>
+                            <div class="filter-item">
+                                <input type="checkbox"> Individual House (234)
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox"> DTCP Plot (189)
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox"> Land (145)
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox"> Commercial (67)
+                            </div>
+                        </div>
+                        
+                        <div class="sidebar-section">
+                            <div class="sidebar-title">Special Filters</div>
+                            <div class="filter-item">
+                                <input type="checkbox"> ✓ SV Verified Only
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox"> Owner Properties Only
+                            </div>
+                            <div class="filter-item">
+                                <input type="checkbox"> New Projects
+                            </div>
+                        </div>
+                        
+                        <button class="btn-primary">Apply Filters</button>
+                    </div>
+                    
+                    <!-- Results Area -->
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                            <div>
+                                <strong style="font-size: 18px;">1,256 Properties</strong> in Saravanampatti, Coimbatore
+                            </div>
+                            <div style="display: flex; gap: 15px; align-items: center;">
+                                <select class="form-control" style="width: 200px;">
+                                    <option>Sort: Relevance</option>
+                                    <option>Price: Low to High</option>
+                                    <option>Price: High to Low</option>
+                                    <option>Newest First</option>
+                                </select>
+                                <button class="btn-small btn-info">🗺️ Map View</button>
+                                <button class="btn-small" style="background: #f8f9fa; border: 1px solid #ddd;">📋 List</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Property Cards -->
+                        <div style="display: flex; flex-direction: column; gap: 20px;">
+                            <!-- Property Card 1 -->
+                            <div class="card" style="display: grid; grid-template-columns: 300px 1fr; padding: 0;">
+                                <div class="card-image" style="height: auto; border-radius: 10px 0 0 10px;">
+                                    <div class="badge">✓ SV VERIFIED</div>
+                                </div>
+                                <div class="card-content">
+                                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                                        <div>
+                                            <div class="price-tag">₹ 45 Lakhs</div>
+                                            <div class="card-title">DTCP Approved Plot for Sale</div>
+                                            <div class="card-text" style="margin-bottom: 15px;">📍 Saravanampatti, Coimbatore, Tamil Nadu</div>
+                                            <div style="display: flex; gap: 20px; font-size: 14px; color: #666; margin-bottom: 15px;">
+                                                <span>📐 1200 sqft</span>
+                                                <span>🏷️ Owner</span>
+                                                <span>📅 Posted 2 days ago</span>
+                                            </div>
+                                            <div class="card-text">
+                                                Prime location DTCP approved plot. Clear title, all amenities nearby...
+                                            </div>
+                                        </div>
+                                        <button style="background: none; border: none; font-size: 24px; cursor: pointer; color: #e74c3c;">❤️</button>
+                                    </div>
+                                    <div class="btn-group" style="margin-top: 15px;">
+                                        <button class="btn-small btn-success">📞 Call Owner</button>
+                                        <button class="btn-small btn-info">💬 WhatsApp</button>
+                                        <button class="btn-small" style="background: #f8f9fa; border: 1px solid #ddd;">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Property Card 2 -->
+                            <div class="card" style="display: grid; grid-template-columns: 300px 1fr; padding: 0;">
+                                <div class="card-image" style="height: auto; border-radius: 10px 0 0 10px;">
+                                    <div class="badge">✓ SV VERIFIED</div>
+                                </div>
+                                <div class="card-content">
+                                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                                        <div>
+                                            <div class="price-tag">₹ 75 Lakhs</div>
+                                            <div class="card-title">2 BHK Independent House</div>
+                                            <div class="card-text" style="margin-bottom: 15px;">📍 Kovilpalayam, Coimbatore</div>
+                                            <div style="display: flex; gap: 20px; font-size: 14px; color: #666; margin-bottom: 15px;">
+                                                <span>🛏️ 2 BHK</span>
+                                                <span>📐 900 sqft</span>
+                                                <span>🏷️ Owner</span>
+                                            </div>
+                                            <div class="card-text">
+                                                Spacious 2 BHK house with modern amenities. Ready to move...
+                                            </div>
+                                        </div>
+                                        <button style="background: none; border: none; font-size: 24px; cursor: pointer; color: #999;">🤍</button>
+                                    </div>
+                                    <div class="btn-group" style="margin-top: 15px;">
+                                        <button class="btn-small btn-success">📞 Call Owner</button>
+                                        <button class="btn-small btn-info">💬 WhatsApp</button>
+                                        <button class="btn-small" style="background: #f8f9fa; border: 1px solid #ddd;">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Property Card 3 -->
+                            <div class="card" style="display: grid; grid-template-columns: 300px 1fr; padding: 0;">
+                                <div class="card-image" style="height: auto; border-radius: 10px 0 0 10px;">
+                                    <div class="badge" style="background: #e74c3c;">FEATURED</div>
+                                </div>
+                                <div class="card-content">
+                                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                                        <div>
+                                            <div class="price-tag">₹ 1.2 Cr</div>
+                                            <div class="card-title">3 BHK Villa with Garden</div>
+                                            <div class="card-text" style="margin-bottom: 15px;">📍 Saravanampatti, Coimbatore</div>
+                                            <div style="display: flex; gap: 20px; font-size: 14px; color: #666; margin-bottom: 15px;">
+                                                <span>🛏️ 3 BHK</span>
+                                                <span>📐 1800 sqft</span>
+                                                <span>🏷️ Builder</span>
+                                            </div>
+                                            <div class="card-text">
+                                                Luxury villa with garden, parking, and premium fittings...
+                                            </div>
+                                        </div>
+                                        <button style="background: none; border: none; font-size: 24px; cursor: pointer; color: #999;">🤍</button>
+                                    </div>
+                                    <div class="btn-group" style="margin-top: 15px;">
+                                        <button class="btn-small btn-success">📞 Call Builder</button>
+                                        <button class="btn-small btn-info">💬 WhatsApp</button>
+                                        <button class="btn-small" style="background: #f8f9fa; border: 1px solid #ddd;">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <div style="display: flex; justify-content: center; gap: 10px; margin-top: 30px;">
+                            <button class="btn-small" style="background: #f8f9fa; border: 1px solid #ddd;">← Previous</button>
+                            <button class="btn-small btn-info">1</button>
+                            <button class="btn-small" style="background: #f8f9fa; border: 1px solid #ddd;">2</button>
+                            <button class="btn-small" style="background: #f8f9fa; border: 1px solid #ddd;">3</button>
+                            <button class="btn-small" style="background: #f8f9fa; border: 1px solid #ddd;">...</button>
+                            <button class="btn-small" style="background: #f8f9fa; border: 1px solid #ddd;">42</button>
+                            <button class="btn-small" style="background: #f8f9fa; border: 1px solid #ddd;">Next →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="annotation">
+                    <strong>Search Results Page:</strong> Left sidebar with cascading filters (Region → Location → Budget → Type), main area with property cards in list view, sorting options, map toggle, and pagination
+                </div>
+            </div>
+        </div>
+        
+        <!-- PAGE 3: PROPERTY DETAILS -->
+        <div id="page3" class="page-section">
+            <div class="page-header">
+                <div class="page-title">3. Property Detail Page</div>
+                <div class="page-description">Complete property information with image gallery, specifications, location map, and contact form</div>
+            </div>
+            <div class="wireframe">
+                <div class="header-bar">
+                    <div class="logo">🏠 PropertyHub</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">Buy</li>
+                        <li class="nav-item">Rent</li>
+                        <li class="nav-item">Services</li>
+                    </ul>
+                    <div style="display: flex; gap: 10px;">
+                        <div class="nav-item">👤 My Account</div>
+                    </div>
+                </div>
+                
+                <div class="breadcrumb" style="margin: 20px 0;">
+                    Home → Properties → Coimbatore → Saravanampatti → Property Details
+                </div>
+                
+                <div class="property-detail-grid">
+                    <!-- Left Column -->
+                    <div>
+                        <!-- Image Gallery -->
+                        <div class="image-gallery">
+                            <div class="main-image">
+                                <div class="badge">✓ SV VERIFIED</div>
+                            </div>
+                            <div class="thumbnail-grid">
+                                <div class="thumbnail"></div>
+                                <div class="thumbnail"></div>
+                                <div class="thumbnail"></div>
+                                <div class="thumbnail"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Property Info -->
+                        <div class="info-box">
+                            <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 15px;">
+                                <div>
+                                    <div class="price-tag">₹ 45 Lakhs</div>
+                                    <h2 style="font-size: 28px; margin-bottom: 10px;">DTCP Approved Plot for Sale</h2>
+                                    <div style="font-size: 16px; color: #666;">📍 Saravanampatti, Coimbatore, Tamil Nadu - 641035</div>
+                                </div>
+                                <div style="display: flex; gap: 10px;">
+                                    <button style="background: white; border: 1px solid #ddd; padding: 10px 15px; border-radius: 5px; cursor: pointer;">❤️ Save</button>
+                                    <button style="background: white; border: 1px solid #ddd; padding: 10px 15px; border-radius: 5px; cursor: pointer;">📤 Share</button>
+                                </div>
+                            </div>
+                            
+                            <div class="spec-grid">
+                                <div class="spec-item">
+                                    <div class="spec-value">1200</div>
+                                    <div class="spec-label">Sq.Ft</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-value">DTCP</div>
+                                    <div class="spec-label">Approved</div>
+                                </div>
+                                <div class="spec-item">
+                                    <div class="spec-value">Owner</div>
+                                    <div class="spec-label">Direct</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Description -->
+                        <div class="info-box">
+                            <h3 style="font-size: 20px; margin-bottom: 15px;">Property Description</h3>
+                            <p style="line-height: 1.8; color: #555;">
+                                Prime location DTCP approved plot available for immediate sale. This residential plot is located in the heart of Saravanampatti, one of Coimbatore's most sought-after localities. 
+                                <br><br>
+                                The plot comes with clear title and all necessary approvals from the local authorities. Excellent connectivity to schools, hospitals, shopping centers, and IT parks. 
+                                <br><br>
+                                Key Features:
+                                • DTCP approved layout
+                                • Clear title with all documents
+                                • Corner plot with 40ft road access
+                                • Underground drainage and water supply
+                                • Street lights installed
+                                • Gated community
+                                • 24/7 security
+                            </p>
+                        </div>
+                        
+                        <!-- Amenities -->
+                        <div class="info-box">
+                            <h3 style="font-size: 20px; margin-bottom: 15px;">Amenities</h3>
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+                                <div>✓ 24/7 Water Supply</div>
+                                <div>✓ Power Backup</div>
+                                <div>✓ Street Lights</div>
+                                <div>✓ Drainage System</div>
+                                <div>✓ Gated Community</div>
+                                <div>✓ Security</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Location Map -->
+                        <div class="info-box">
+                            <h3 style="font-size: 20px; margin-bottom: 15px;">Location</h3>
+                            <div style="height: 300px; background: #f0f0f0; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                                🗺️ Google Maps Integration
+                            </div>
+                            <div style="margin-top: 15px;">
+                                <strong>Nearby Facilities:</strong>
+                                <ul style="margin-top: 10px; line-height: 2; color: #555;">
+                                    <li>Schools: 0.5 km</li>
+                                    <li>Hospitals: 1.2 km</li>
+                                    <li>Shopping Mall: 2 km</li>
+                                    <li>IT Parks: 3 km</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Similar Properties -->
+                        <div class="info-box">
+                            <h3 style="font-size: 20px; margin-bottom: 15px;">Similar Properties</h3>
+                            <div class="content-grid">
+                                <div class="card">
+                                    <div class="card-image" style="height: 150px;"></div>
+                                    <div class="card-content">
+                                        <div style="font-size: 18px; font-weight: bold; color: #27ae60;">₹ 42 Lakhs</div>
+                                        <div class="card-title">DTCP Plot</div>
+                                        <div class="card-text">1100 sqft • Saravanampatti</div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-image" style="height: 150px;"></div>
+                                    <div class="card-content">
+                                        <div style="font-size: 18px; font-weight: bold; color: #27ae60;">₹ 48 Lakhs</div>
+                                        <div class="card-title">DTCP Plot</div>
+                                        <div class="card-text">1300 sqft • Kovilpalayam</div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-image" style="height: 150px;"></div>
+                                    <div class="card-content">
+                                        <div style="font-size: 18px; font-weight: bold; color: #27ae60;">₹ 50 Lakhs</div>
+                                        <div class="card-title">DTCP Plot</div>
+                                        <div class="card-text">1400 sqft • Saravanampatti</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column - Contact Card -->
+                    <div>
+                        <div class="contact-card">
+                            <h3 style="font-size: 20px; margin-bottom: 20px; text-align: center;">Contact Property Owner</h3>
+                            
+                            <div style="text-align: center; margin-bottom: 20px;">
+                                <div style="width: 80px; height: 80px; background: #667eea; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 36px;">👤</div>
+                                <div style="font-size: 18px; font-weight: bold; margin-bottom: 5px;">John Doe</div>
+                                <div style="font-size: 14px; color: #666;">Property Owner</div>
+                                <div style="font-size: 12px; color: #27ae60; margin-top: 5px;">✓ Verified</div>
+                            </div>
+                            
+                            <button class="btn-primary" style="margin-bottom: 10px;">📞 Call Owner</button>
+                            <button class="btn-primary" style="background: #25D366; margin-bottom: 20px;">💬 WhatsApp</button>
+                            
+                            <div style="text-align: center; color: #666; font-size: 14px; margin-bottom: 20px;">OR</div>
+                            
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Your Email">
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control" placeholder="Your Phone">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3" placeholder="Message (Optional)"></textarea>
+                            </div>
+                            
+                            <button class="btn-primary">📅 Schedule Site Visit</button>
+                            
+                            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #ddd;">
+                                <div style="font-size: 14px; color: #666; margin-bottom: 15px;">Need Help?</div>
+                                <button class="btn-small btn-info" style="width: 100%; margin-bottom: 10px;">💰 Home Loan</button>
+                                <button class="btn-small btn-info" style="width: 100%; margin-bottom: 10px;">📐 Survey</button>
+                                <button class="btn-small btn-info" style="width: 100%;">⚖️ Legal Help</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="annotation">
+                    <strong>Property Detail Page:</strong> Image gallery with thumbnails, complete property information, specifications, amenities, location map, similar properties, and sticky contact card with multiple contact options
+                </div>
+            </div>
+        </div>
+        
+        <!-- PAGE 4: POST PROPERTY (Multi-step Form) -->
+        <div id="page4" class="page-section">
+            <div class="page-header">
+                <div class="page-title">4. Post Property (Multi-Step Form)</div>
+                <div class="page-description">4-step property posting form: Basic Info → Location → Photos → Preview</div>
+            </div>
+            <div class="wireframe">
+                <div class="header-bar">
+                    <div class="logo">🏠 PropertyHub</div>
+                    <div style="display: flex; gap: 10px;">
+                        <div class="nav-item">👤 My Account</div>
+                    </div>
+                </div>
+                
+                <div style="max-width: 900px; margin: 30px auto;">
+                    <h2 style="text-align: center; margin-bottom: 30px; font-size: 32px;">Post Your Property</h2>
+                    
+                    <!-- Step Indicator -->
+                    <div class="multi-step">
+                        <div class="step active">
+                            <div style="font-weight: bold; margin-bottom: 5px;">Step 1</div>
+                            <div style="font-size: 14px;">Basic Information</div>
+                        </div>
+                        <div class="step">
+                            <div style="font-weight: bold; margin-bottom: 5px;">Step 2</div>
+                            <div style="font-size: 14px;">Location Details</div>
+                        </div>
+                        <div class="step">
+                            <div style="font-weight: bold; margin-bottom: 5px;">Step 3</div>
+                            <div style="font-size: 14px;">Upload Photos</div>
+                        </div>
+                        <div class="step">
+                            <div style="font-weight: bold; margin-bottom: 5px;">Step 4</div>
+                            <div style="font-size: 14px;">Preview & Submit</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Form Content -->
+                    <div class="info-box">
+                        <h3 style="font-size: 24px; margin-bottom: 25px;">Step 1: Basic Information</h3>
+                        
+                        <div class="grid-2">
+                            <div class="form-group">
+                                <label class="form-label">Property Type *</label>
+                                <select class="form-control">
+                                    <option>Select Type</option>
+                                    <option>Land</option>
+                                    <option>DTCP Plot</option>
+                                    <option>Individual House</option>
+                                    <option>Commercial Building</option>
+                                    <option>Industrial Land/Building</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Transaction Type *</label>
+                                <select class="form-control">
+                                    <option>Sale</option>
+                                    <option>Rent</option>
+                                    <option>Lease</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Property Title *</label>
+                            <input type="text" class="form-control" placeholder="e.g., DTCP Approved Plot for Sale">
+                        </div>
+                        
+                        <div class="grid-2">
+                            <div class="form-group">
+                                <label class="form-label">Property Size (Sq.Ft) *</label>
+                                <input type="number" class="form-control" placeholder="Enter size">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Price (₹) *</label>
+                                <input type="number" class="form-control" placeholder="Enter price">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Property Description *</label>
+                            <textarea class="form-control" rows="5" placeholder="Describe your property..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">For House/Apartment (Optional)</label>
+                            <div class="grid-2">
+                                <select class="form-control">
+                                    <option>BHK Type</option>
+                                    <option>1 BHK</option>
+                                    <option>2 BHK</option>
+                                    <option>3 BHK</option>
+                                    <option>4+ BHK</option>
+                                </select>
+                                <select class="form-control">
+                                    <option>Furnishing Status</option>
+                                    <option>Unfurnished</option>
+                                    <option>Semi-Furnished</option>
+                                    <option>Fully Furnished</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; margin-top: 30px;">
+                            <button class="btn-small" style="background: #f8f9fa; border: 1px solid #ddd;">Cancel</button>
+                            <button class="btn-primary" style="width: 200px;">Continue to Location →</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="annotation">
+                    <strong>Post Property Form:</strong> Multi-step process with progress indicator, form validation, save as draft option, and step-by-step navigation
+                </div>
+            </div>
+        </div>
+        
+        <!-- PAGE 5: USER DASHBOARD -->
+        <div id="page5" class="page-section">
+            <div class="page-header">
+                <div class="page-title">5. User Dashboard (Seller/Owner)</div>
+                <div class="page-description">Manage properties, view performance, track leads, and analytics</div>
+            </div>
+            <div class="wireframe">
+                <div class="header-bar">
+                    <div class="logo">🏠 PropertyHub</div>
+                    <ul class="nav-menu">
+                        <li class="nav-item">Dashboard</li>
+                        <li class="nav-item">My Properties</li>
+                        <li class="nav-item">Leads</li>
+                        <li class="nav-item">Profile</li>
+                    </ul>
+                    <div style="display: flex; gap: 10px;">
+                        <div class="nav-item" style="background: #e74c3c;">+ Post Property</div>
+                        <div class="nav-item">👤 John Doe</div>
+                    </div>
+                </div>
+                
+                <div style="padding: 30px;">
+                    <h2 style="font-size: 32px; margin-bottom: 30px;">My Dashboard</h2>
+                    
+                    <!-- Stats Cards -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">5</div>
+                            <div class="stat-label">Active Listings</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">1,247</div>
+                            <div class="stat-label">Total Views</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">89</div>
+                            <div class="stat-label">Total Leads</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">23</div>
+                            <div class="stat-label">Site Visits</div>
+                        </div>
+                    </div>
+                    
+                    <!-- My Properties Table -->
+                    <div class="info-box">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                            <h3 style="font-size: 24px;">My Properties</h3>
+                            <button class="btn-primary">+ Add New Property</button>
+                        </div>
+                        
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Property</th>
+                                    <th>Type</th>
+                                    <th>Price</th>
+                                    <th>Status</th>
+                                    <th>Views</th>
+                                    <th>Leads</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div style="display: flex; gap: 15px; align-items: center;">
+                                            <div style="width: 80px; height: 60px; background: #f0f0f0; border-radius: 5px;"></div>
+                                            <div>
+                                                <div style="font-weight: bold;">DTCP Plot</div>
+                                                <div style="font-size: 13px; color: #666;">Saravanampatti</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>Plot</td>
+                                    <td>₹45L</td>
+                                    <td><span style="background: #d4edda; color: #155724; padding: 5px 10px; border-radius: 5px; font-size: 12px;">LIVE</span></td>
+                                    <td>234</td>
+                                    <td>12</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button class="btn-small btn-info">Edit</button>
+                                            <button class="btn-small btn-danger">Delete</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="display: flex; gap: 15px; align-items: center;">
+                                            <div style="width: 80px; height: 60px; background: #f0f0f0; border-radius: 5px;"></div>
+                                            <div>
+                                                <div style="font-weight: bold;">2 BHK House</div>
+                                                <div style="font-size: 13px; color: #666;">Kovilpalayam</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>House</td>
+                                    <td>₹75L</td>
+                                    <td><span style="background: #fff3cd; color: #856404; padding: 5px 10px; border-radius: 5px; font-size: 12px;">PENDING</span></td>
+                                    <td>0</td>
+                                    <td>0</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button class="btn-small btn-info">Edit</button>
+                                            <button class="btn-small btn-danger">Delete</button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="display: flex; gap: 15px; align-items: center;">
+                                            <div style="width: 80px; height: 60px; background: #f0f0f0; border-
