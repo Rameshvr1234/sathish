@@ -29,6 +29,9 @@ const leadRoutes = require('./routes/leadRoutes');
 const reportRoutes = require('./routes/reportRoutes');
 const offersNewsRoutes = require('./routes/offersNewsRoutes');
 const chatRoutes = require('./routes/chatRoutes');
+const calculatorRoutes = require('./routes/calculatorRoutes');
+const valuationRoutes = require('./routes/valuationRoutes');
+const reviewRoutes = require('./routes/reviewRoutes');
 
 // Import error handler
 const errorHandler = require('./middleware/errorHandler');
@@ -102,6 +105,9 @@ app.use('/api/leads', leadRoutes);
 app.use('/api/reports', reportRoutes);
 app.use('/api/offers-news', offersNewsRoutes);
 app.use('/api/chat', chatRoutes);
+app.use('/api/calculators', calculatorRoutes);
+app.use('/api/valuation', valuationRoutes);
+app.use('/api/reviews', reviewRoutes);
 
 // Socket.io connection handling
 io.on('connection', (socket) => {

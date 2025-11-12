@@ -18,6 +18,11 @@ const SiteVisit = require('./SiteVisit')(sequelize, DataTypes);
 const Chat = require('./Chat')(sequelize, DataTypes);
 const Message = require('./Message')(sequelize, DataTypes);
 const OfferNews = require('./OfferNews')(sequelize, DataTypes);
+const Review = require('./Review')(sequelize, DataTypes);
+const PropertyAlert = require('./PropertyAlert')(sequelize, DataTypes);
+const Builder = require('./Builder')(sequelize, DataTypes);
+const Project = require('./Project')(sequelize, DataTypes);
+const PremiumMembership = require('./PremiumMembership')(sequelize, DataTypes);
 
 // Define associations
 
@@ -107,6 +112,29 @@ User.hasMany(Message, { foreignKey: 'sender_id', as: 'sentMessages' });
 // Offer/News associations
 OfferNews.belongsTo(User, { foreignKey: 'created_by', as: 'creator' });
 
+// Review associations
+Review.belongsTo(User, { foreignKey: 'user_id', as: 'reviewer' });
+Review.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
+Property.hasMany(Review, { foreignKey: 'property_id', as: 'reviews' });
+User.hasMany(Review, { foreignKey: 'user_id', as: 'reviews' });
+
+// PropertyAlert associations
+PropertyAlert.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
+User.hasMany(PropertyAlert, { foreignKey: 'user_id', as: 'propertyAlerts' });
+
+// Builder associations
+Builder.hasMany(Project, { foreignKey: 'builder_id', as: 'projects' });
+Builder.hasMany(Review, { foreignKey: 'builder_id', as: 'reviews' });
+
+// Project associations
+Project.belongsTo(Builder, { foreignKey: 'builder_id', as: 'builder' });
+Project.hasMany(Property, { foreignKey: 'project_id', as: 'properties' });
+Project.hasMany(Review, { foreignKey: 'property_id', as: 'reviews' });
+
+// PremiumMembership associations
+PremiumMembership.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
+User.hasMany(PremiumMembership, { foreignKey: 'user_id', as: 'memberships' });
+
 module.exports = {
   sequelize,
   User,
@@ -124,5 +152,10 @@ module.exports = {
   SiteVisit,
   Chat,
   Message,
-  OfferNews
+  OfferNews,
+  Review,
+  PropertyAlert,
+  Builder,
+  Project,
+  PremiumMembership
 };
