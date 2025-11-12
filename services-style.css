@@ -1,0 +1,370 @@
+/* Services Page Styles */
+
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 150px 0 80px;
+    text-align: center;
+    margin-top: 72px;
+}
+
+.page-header h1 {
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 800;
+    margin-bottom: 16px;
+}
+
+.page-header p {
+    font-size: 20px;
+    opacity: 0.95;
+}
+
+/* Services Navigation */
+.services-nav {
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 72px;
+    z-index: 100;
+}
+
+.services-tabs {
+    display: flex;
+    gap: 8px;
+    padding: 20px 0;
+    overflow-x: auto;
+}
+
+.service-tab {
+    flex: 1;
+    min-width: 200px;
+    padding: 16px 24px;
+    background: var(--gray-lighter);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: var(--dark);
+    transition: var(--transition);
+}
+
+.service-tab i {
+    font-size: 24px;
+}
+
+.service-tab:hover,
+.service-tab.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+}
+
+/* Services Content */
+.services-content {
+    padding: 60px 0 100px;
+    background: var(--gray-lighter);
+}
+
+.service-section {
+    display: none;
+}
+
+.service-section.active {
+    display: block;
+}
+
+.service-header-section {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.service-icon-lg {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: var(--white);
+}
+
+.service-header-section h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.service-header-section p {
+    font-size: 18px;
+    color: var(--gray);
+}
+
+/* Package Cards */
+.service-packages {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
+    margin-bottom: 60px;
+}
+
+.package-card {
+    position: relative;
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 32px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.package-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.package-card.featured {
+    border: 3px solid var(--primary-color);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    right: 32px;
+    background: var(--danger-color);
+    color: var(--white);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.package-header {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--gray-light);
+}
+
+.package-header h3 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 12px;
+}
+
+.package-price {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+.package-features {
+    list-style: none;
+    margin-bottom: 24px;
+}
+
+.package-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    color: var(--dark-light);
+}
+
+.package-features i {
+    color: var(--success-color);
+    font-size: 16px;
+}
+
+/* EMI Calculator */
+.emi-calculator-section {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 40px;
+    margin-bottom: 48px;
+    box-shadow: var(--shadow-md);
+}
+
+.emi-calculator-section h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    color: var(--dark);
+}
+
+.emi-calculator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+}
+
+.form-group {
+    margin-bottom: 32px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--dark);
+}
+
+.slider {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--gray-light);
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    cursor: pointer;
+    border: none;
+}
+
+.slider-value {
+    margin-top: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.emi-result-card {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: var(--border-radius-lg);
+    padding: 40px;
+    color: var(--white);
+}
+
+.emi-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.emi-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.emi-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.emi-label {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+.emi-value {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+/* Bank Partners */
+.bank-partners {
+    background: var(--white);
+    border-radius: var(--border-radius-lg);
+    padding: 40px;
+    margin-bottom: 48px;
+    box-shadow: var(--shadow-md);
+}
+
+.bank-partners h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    color: var(--dark);
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.partner-card {
+    text-align: center;
+    padding: 32px 24px;
+    background: var(--gray-lighter);
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.partner-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.partner-logo {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+}
+
+.partner-card p {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 16px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .emi-calculator-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-packages {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-tabs {
+        flex-direction: column;
+    }
+
+    .service-tab {
+        min-width: auto;
+    }
+
+    .service-header-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-packages {
+        grid-template-columns: 1fr;
+    }
+
+    .partners-grid {
+        grid-template-columns: 1fr;
+    }
+}
