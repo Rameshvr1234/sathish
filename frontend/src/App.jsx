@@ -17,6 +17,7 @@ import Profile from './pages/Profile'
 import RecentlyViewedPage from './pages/RecentlyViewedPage'
 import ShortlistPage from './pages/ShortlistPage'
 import LocalityInsightsPage from './pages/LocalityInsightsPage'
+import PropertyComparisonPage from './pages/PropertyComparisonPage'
 import NotFound from './pages/NotFound'
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         <Route path="properties" element={<PropertyList />} />
         <Route path="properties/:id" element={<PropertyDetail />} />
         <Route path="localities/:localityName" element={<LocalityInsightsPage />} />
+        <Route path="compare" element={<PropertyComparisonPage />} />
 
         {/* Protected Routes */}
         <Route
