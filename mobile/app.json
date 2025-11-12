@@ -1,0 +1,17 @@
+{
+  "name": "RealEstateApp",
+  "displayName": "Real Estate Portal",
+  "version": "1.0.0",
+  "description": "Find your dream property with ease",
+  "orientation": "portrait",
+  "icon": "./assets/icon.png",
+  "splash": {
+    "image": "./assets/splash.png",
+    "resizeMode": "contain",
+    "backgroundColor": "#1890ff"
+  },
+  "platforms": [
+    "ios",
+    "android"
+  ]
+}
