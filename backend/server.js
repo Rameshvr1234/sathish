@@ -36,6 +36,10 @@ const builderRoutes = require('./routes/builderRoutes');
 const projectRoutes = require('./routes/projectRoutes');
 const alertRoutes = require('./routes/alertRoutes');
 const membershipRoutes = require('./routes/membershipRoutes');
+const recentlyViewedRoutes = require('./routes/recentlyViewedRoutes');
+const shortlistRoutes = require('./routes/shortlistRoutes');
+const localityInsightsRoutes = require('./routes/localityInsightsRoutes');
+const priceTrendsRoutes = require('./routes/priceTrendsRoutes');
 
 // Import error handler
 const errorHandler = require('./middleware/errorHandler');
@@ -116,6 +120,10 @@ app.use('/api/builders', builderRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/alerts', alertRoutes);
 app.use('/api/membership', membershipRoutes);
+app.use('/api/recently-viewed', recentlyViewedRoutes);
+app.use('/api/shortlist', shortlistRoutes);
+app.use('/api/localities', localityInsightsRoutes);
+app.use('/api/price-trends', priceTrendsRoutes);
 
 // Socket.io connection handling
 io.on('connection', (socket) => {

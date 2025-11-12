@@ -23,6 +23,9 @@ const PropertyAlert = require('./PropertyAlert')(sequelize, DataTypes);
 const Builder = require('./Builder')(sequelize, DataTypes);
 const Project = require('./Project')(sequelize, DataTypes);
 const PremiumMembership = require('./PremiumMembership')(sequelize, DataTypes);
+const RecentlyViewed = require('./RecentlyViewed');
+const Shortlist = require('./Shortlist');
+const LocalityInsights = require('./LocalityInsights');
 
 // Define associations
 
@@ -135,6 +138,18 @@ Project.hasMany(Review, { foreignKey: 'property_id', as: 'reviews' });
 PremiumMembership.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
 User.hasMany(PremiumMembership, { foreignKey: 'user_id', as: 'memberships' });
 
+// RecentlyViewed associations
+RecentlyViewed.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
+RecentlyViewed.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
+User.hasMany(RecentlyViewed, { foreignKey: 'user_id', as: 'recentlyViewed' });
+Property.hasMany(RecentlyViewed, { foreignKey: 'property_id', as: 'views' });
+
+// Shortlist associations
+Shortlist.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
+Shortlist.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
+User.hasMany(Shortlist, { foreignKey: 'user_id', as: 'shortlist' });
+Property.hasMany(Shortlist, { foreignKey: 'property_id', as: 'shortlists' });
+
 module.exports = {
   sequelize,
   User,
@@ -157,5 +172,8 @@ module.exports = {
   PropertyAlert,
   Builder,
   Project,
-  PremiumMembership
+  PremiumMembership,
+  RecentlyViewed,
+  Shortlist,
+  LocalityInsights
 };
