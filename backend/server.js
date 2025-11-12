@@ -48,6 +48,9 @@ const aiRecommendationRoutes = require('./routes/aiRecommendationRoutes');
 const homeLoanRoutes = require('./routes/homeLoanRoutes');
 const analyticsRoutes = require('./routes/analyticsRoutes');
 
+// SEO Routes
+const seoRoutes = require('./routes/seoRoutes');
+
 // Import error handler
 const errorHandler = require('./middleware/errorHandler');
 
@@ -138,6 +141,17 @@ app.use('/api/video-call-tours', videoCallTourRoutes);
 app.use('/api/ai-recommendations', aiRecommendationRoutes);
 app.use('/api/home-loans', homeLoanRoutes);
 app.use('/api/analytics', analyticsRoutes);
+
+// SEO API Routes
+app.use('/api/seo', seoRoutes);
+
+// SEO Files - Serve at root level for better SEO
+app.get('/sitemap.xml', (req, res) => {
+  res.redirect('/api/seo/sitemap.xml');
+});
+app.get('/robots.txt', (req, res) => {
+  res.redirect('/api/seo/robots.txt');
+});
 
 // Socket.io connection handling
 io.on('connection', (socket) => {
