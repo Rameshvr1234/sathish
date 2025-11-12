@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PropHub - Find Your Dream Property</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-home"></i>
+                    <span>PropHub</span>
+                </div>
+                <div class="nav-links">
+                    <a href="#" class="nav-link active">Home</a>
+                    <a href="properties.html" class="nav-link">Properties</a>
+                    <a href="services.html" class="nav-link">Services</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-actions">
+                    <button class="btn btn-outline">Sign In</button>
+                    <button class="btn btn-primary">Post Property</button>
+                    <button class="mobile-menu-toggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">
+                    <i class="fas fa-shield-alt"></i>
+                    Trusted by 10,000+ Customers
+                </span>
+                <h1 class="hero-title">Find Your Perfect<br><span class="gradient-text">Dream Property</span></h1>
+                <p class="hero-subtitle">Discover properties across Coimbatore, Salem, and Tirupur with our advanced search and verified listings</p>
+
+                <!-- Advanced Search Box -->
+                <div class="search-box">
+                    <div class="search-tabs">
+                        <button class="search-tab active">Buy</button>
+                        <button class="search-tab">Rent</button>
+                        <button class="search-tab">Sell</button>
+                    </div>
+
+                    <div class="search-form">
+                        <div class="search-field">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <select class="search-input">
+                                <option>Select Region</option>
+                                <option>Coimbatore</option>
+                                <option>Salem</option>
+                                <option>Tirupur</option>
+                            </select>
+                        </div>
+
+                        <div class="search-field">
+                            <i class="fas fa-location-dot"></i>
+                            <select class="search-input">
+                                <option>Select Location</option>
+                                <option>Saravanampatti</option>
+                                <option>Kovilpalayam</option>
+                                <option>Gandhipuram</option>
+                                <option>RS Puram</option>
+                            </select>
+                        </div>
+
+                        <div class="search-field">
+                            <i class="fas fa-rupee-sign"></i>
+                            <select class="search-input">
+                                <option>Budget Range</option>
+                                <option>₹5L - ₹10L</option>
+                                <option>₹10L - ₹15L</option>
+                                <option>₹15L - ₹20L</option>
+                                <option>₹20L+</option>
+                            </select>
+                        </div>
+
+                        <div class="search-field">
+                            <i class="fas fa-building"></i>
+                            <select class="search-input">
+                                <option>Property Type</option>
+                                <option>Land</option>
+                                <option>DTCP Plot</option>
+                                <option>House</option>
+                                <option>Commercial</option>
+                                <option>Industrial</option>
+                            </select>
+                        </div>
+
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                            Search Properties
+                        </button>
+                    </div>
+
+                    <div class="search-filters">
+                        <label class="filter-checkbox">
+                            <input type="checkbox">
+                            <span>SV Verified Only</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox">
+                            <span>Owner Properties</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox">
+                            <span>New Projects</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3>5000+</h3>
+                        <p>Properties</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>10K+</h3>
+                        <p>Happy Customers</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>500+</h3>
+                        <p>Verified Agents</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>3</h3>
+                        <p>Major Cities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <span class="section-badge">Popular Choices</span>
+                    <h2 class="section-title">Featured Properties</h2>
+                    <p class="section-subtitle">Handpicked properties just for you</p>
+                </div>
+                <a href="properties.html" class="btn btn-outline">View All <i class="fas fa-arrow-right"></i></a>
+            </div>
+
+            <div class="properties-grid">
+                <!-- Property Card 1 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=500&h=400&fit=crop" alt="Property">
+                        <div class="property-badges">
+                            <span class="badge badge-featured">Featured</span>
+                            <span class="badge badge-verified">
+                                <i class="fas fa-shield-check"></i> SV Verified
+                            </span>
+                        </div>
+                        <button class="property-favorite">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-price">₹45,00,000</div>
+                        <h3 class="property-title">Modern Villa in Saravanampatti</h3>
+                        <p class="property-location">
+                            <i class="fas fa-location-dot"></i>
+                            Saravanampatti, Coimbatore
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 3 BHK</span>
+                            <span><i class="fas fa-bath"></i> 2 Bath</span>
+                            <span><i class="fas fa-ruler-combined"></i> 1500 sqft</span>
+                        </div>
+                        <div class="property-footer">
+                            <div class="property-owner">
+                                <img src="https://ui-avatars.com/api/?name=John+Doe&background=667eea&color=fff" alt="Owner">
+                                <span>John Doe</span>
+                            </div>
+                            <button class="btn btn-sm btn-primary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 2 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=500&h=400&fit=crop" alt="Property">
+                        <div class="property-badges">
+                            <span class="badge badge-new">New</span>
+                        </div>
+                        <button class="property-favorite">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-price">₹12,00,000</div>
+                        <h3 class="property-title">DTCP Approved Plot</h3>
+                        <p class="property-location">
+                            <i class="fas fa-location-dot"></i>
+                            Kovilpalayam, Salem
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-ruler-combined"></i> 2400 sqft</span>
+                            <span><i class="fas fa-certificate"></i> DTCP</span>
+                            <span><i class="fas fa-road"></i> 40ft Road</span>
+                        </div>
+                        <div class="property-footer">
+                            <div class="property-owner">
+                                <img src="https://ui-avatars.com/api/?name=Sarah+Smith&background=667eea&color=fff" alt="Owner">
+                                <span>Sarah Smith</span>
+                            </div>
+                            <button class="btn btn-sm btn-primary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Card 3 -->
+                <div class="property-card">
+                    <div class="property-image">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&h=400&fit=crop" alt="Property">
+                        <div class="property-badges">
+                            <span class="badge badge-verified">
+                                <i class="fas fa-shield-check"></i> SV Verified
+                            </span>
+                        </div>
+                        <button class="property-favorite active">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                    <div class="property-content">
+                        <div class="property-price">₹85,00,000</div>
+                        <h3 class="property-title">Commercial Building</h3>
+                        <p class="property-location">
+                            <i class="fas fa-location-dot"></i>
+                            Gandhipuram, Coimbatore
+                        </p>
+                        <div class="property-features">
+                            <span><i class="fas fa-building"></i> 3 Floors</span>
+                            <span><i class="fas fa-car"></i> Parking</span>
+                            <span><i class="fas fa-ruler-combined"></i> 3500 sqft</span>
+                        </div>
+                        <div class="property-footer">
+                            <div class="property-owner">
+                                <img src="https://ui-avatars.com/api/?name=Mike+Johnson&background=667eea&color=fff" alt="Owner">
+                                <span>Mike Johnson</span>
+                            </div>
+                            <button class="btn btn-sm btn-primary">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section section-services">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-badge">Our Services</span>
+                <h2 class="section-title">Complete Property Solutions</h2>
+                <p class="section-subtitle">From survey to construction - we've got you covered</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 class="service-title">Survey Support</h3>
+                    <p class="service-description">6 types of professional surveys including digital, land, and DTCP verification</p>
+                    <ul class="service-list">
+                        <li>Digital Survey</li>
+                        <li>Land Survey</li>
+                        <li>DTCP Verification</li>
+                    </ul>
+                    <div class="service-price">Starting from ₹5,000</div>
+                    <button class="btn btn-outline btn-block">Learn More</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <h3 class="service-title">Legal Support</h3>
+                    <p class="service-description">Complete legal assistance for property documentation and verification</p>
+                    <ul class="service-list">
+                        <li>Sale Deed Documentation</li>
+                        <li>Legal Consultation</li>
+                        <li>Document Verification</li>
+                    </ul>
+                    <div class="service-price">Starting from ₹5,000</div>
+                    <button class="btn btn-outline btn-block">Learn More</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3 class="service-title">Construction Support</h3>
+                    <p class="service-description">7 comprehensive construction services from planning to execution</p>
+                    <ul class="service-list">
+                        <li>2D & 3D Plans</li>
+                        <li>Interior Design</li>
+                        <li>Complete Construction</li>
+                    </ul>
+                    <div class="service-price">Starting from ₹15,000</div>
+                    <button class="btn btn-outline btn-block">Learn More</button>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3 class="service-title">Finance Support</h3>
+                    <p class="service-description">Home loan assistance with EMI calculator and bank tie-ups</p>
+                    <ul class="service-list">
+                        <li>EMI Calculator</li>
+                        <li>Loan Application</li>
+                        <li>Bank Partnerships</li>
+                    </ul>
+                    <div class="service-price">Free Consultation</div>
+                    <button class="btn btn-outline btn-block">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-badge">Why Choose Us</span>
+                <h2 class="section-title">Your Trusted Property Partner</h2>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-check"></i>
+                    </div>
+                    <h3>SV Verified Properties</h3>
+                    <p>All properties verified by our experts for your peace of mind</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support for all your queries</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Secure Transactions</h3>
+                    <p>Safe and secure payment gateway integration</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Market Insights</h3>
+                    <p>Real-time market trends and property valuations</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Access properties on-the-go with our responsive platform</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Expert Team</h3>
+                    <p>Professional agents ready to assist you</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Find Your Dream Property?</h2>
+                <p>Join thousands of happy customers who found their perfect home with us</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-white btn-lg">Get Started</button>
+                    <button class="btn btn-outline-white btn-lg">Talk to Expert</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <i class="fas fa-home"></i>
+                        <span>PropHub</span>
+                    </div>
+                    <p class="footer-description">Your trusted partner in finding the perfect property across Coimbatore, Salem, and Tirupur.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Buy Property</a></li>
+                        <li><a href="#">Rent Property</a></li>
+                        <li><a href="#">Sell Property</a></li>
+                        <li><a href="#">Post Property</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Survey Support</a></li>
+                        <li><a href="#">Legal Support</a></li>
+                        <li><a href="#">Construction</a></li>
+                        <li><a href="#">Finance Help</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone"></i> +91 9876543210</li>
+                        <li><i class="fas fa-envelope"></i> info@prophub.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Coimbatore, TN</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 PropHub. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
