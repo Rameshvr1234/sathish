@@ -32,6 +32,10 @@ const chatRoutes = require('./routes/chatRoutes');
 const calculatorRoutes = require('./routes/calculatorRoutes');
 const valuationRoutes = require('./routes/valuationRoutes');
 const reviewRoutes = require('./routes/reviewRoutes');
+const builderRoutes = require('./routes/builderRoutes');
+const projectRoutes = require('./routes/projectRoutes');
+const alertRoutes = require('./routes/alertRoutes');
+const membershipRoutes = require('./routes/membershipRoutes');
 
 // Import error handler
 const errorHandler = require('./middleware/errorHandler');
@@ -108,6 +112,10 @@ app.use('/api/chat', chatRoutes);
 app.use('/api/calculators', calculatorRoutes);
 app.use('/api/valuation', valuationRoutes);
 app.use('/api/reviews', reviewRoutes);
+app.use('/api/builders', builderRoutes);
+app.use('/api/projects', projectRoutes);
+app.use('/api/alerts', alertRoutes);
+app.use('/api/membership', membershipRoutes);
 
 // Socket.io connection handling
 io.on('connection', (socket) => {
