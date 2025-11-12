@@ -13,6 +13,11 @@ import RegisterScreen from '../screens/auth/RegisterScreen';
 import HomeScreen from '../screens/home/HomeScreen';
 import PropertyListScreen from '../screens/property/PropertyListScreen';
 import PropertyDetailScreen from '../screens/property/PropertyDetailScreen';
+import CreatePropertyScreen from '../screens/property/CreatePropertyScreen';
+import MyPropertiesScreen from '../screens/property/MyPropertiesScreen';
+import SavedPropertiesScreen from '../screens/property/SavedPropertiesScreen';
+import ServiceBookingScreen from '../screens/services/ServiceBookingScreen';
+import ChatScreen from '../screens/chat/ChatScreen';
 import ProfileScreen from '../screens/profile/ProfileScreen';
 import Loading from '../components/common/Loading';
 
@@ -31,6 +36,8 @@ const TabNavigator = () => {
             iconName = 'home';
           } else if (route.name === 'Properties') {
             iconName = 'home-city';
+          } else if (route.name === 'Chat') {
+            iconName = 'chat';
           } else if (route.name === 'Profile') {
             iconName = 'account';
           }
@@ -61,6 +68,11 @@ const TabNavigator = () => {
         name="Properties"
         component={PropertyListScreen}
         options={{title: 'Properties'}}
+      />
+      <Tab.Screen
+        name="Chat"
+        component={ChatScreen}
+        options={{title: 'Messages'}}
       />
       <Tab.Screen
         name="Profile"
@@ -139,6 +151,28 @@ const AppNavigator = () => {
               name="PropertyDetail"
               component={PropertyDetailScreen}
               options={{title: 'Property Details'}}
+            />
+            <Stack.Screen
+              name="CreateProperty"
+              component={CreatePropertyScreen}
+              options={{title: 'Post New Property'}}
+            />
+            <Stack.Screen
+              name="MyProperties"
+              component={MyPropertiesScreen}
+              options={{title: 'My Properties'}}
+            />
+            <Stack.Screen
+              name="SavedProperties"
+              component={SavedPropertiesScreen}
+              options={{title: 'Saved Properties'}}
+            />
+            <Stack.Screen
+              name="ServiceBooking"
+              component={ServiceBookingScreen}
+              options={({route}) => ({
+                title: `Book ${route.params?.type?.charAt(0).toUpperCase() + route.params?.type?.slice(1)} Service`,
+              })}
             />
           </>
         )}

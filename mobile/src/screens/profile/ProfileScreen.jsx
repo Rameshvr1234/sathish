@@ -31,7 +31,7 @@ const ProfileScreen = ({navigation}) => {
     {
       icon: 'account-edit',
       title: 'Edit Profile',
-      onPress: () => {},
+      onPress: () => Alert.alert('Coming Soon', 'Profile editing will be available soon'),
     },
     {
       icon: 'home-city',
@@ -42,27 +42,32 @@ const ProfileScreen = ({navigation}) => {
     {
       icon: 'briefcase',
       title: 'My Service Bookings',
-      onPress: () => {},
+      onPress: () => Alert.alert('Coming Soon', 'Service bookings history will be available soon'),
     },
     {
       icon: 'heart',
       title: 'Saved Properties',
-      onPress: () => {},
+      onPress: () => navigation.navigate('SavedProperties'),
+    },
+    {
+      icon: 'chat',
+      title: 'Messages',
+      onPress: () => navigation.navigate('Chat'),
     },
     {
       icon: 'bell',
       title: 'Notifications',
-      onPress: () => {},
+      onPress: () => Alert.alert('Coming Soon', 'Notifications will be available soon'),
     },
     {
       icon: 'help-circle',
       title: 'Help & Support',
-      onPress: () => {},
+      onPress: () => Alert.alert('Help & Support', 'For assistance, please contact: support@realestate.com'),
     },
     {
       icon: 'information',
       title: 'About',
-      onPress: () => {},
+      onPress: () => Alert.alert('Real Estate Portal', 'Version 1.0.0\n\nYour trusted partner in finding the perfect property.'),
     },
   ];
 
