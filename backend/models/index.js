@@ -27,6 +27,13 @@ const RecentlyViewed = require('./RecentlyViewed');
 const Shortlist = require('./Shortlist');
 const LocalityInsights = require('./LocalityInsights');
 
+// Phase 8 Models
+const VirtualTour = require('./VirtualTour')(sequelize, DataTypes);
+const VideoCallTour = require('./VideoCallTour')(sequelize, DataTypes);
+const AIRecommendation = require('./AIRecommendation')(sequelize, DataTypes);
+const HomeLoanApplication = require('./HomeLoanApplication')(sequelize, DataTypes);
+const PropertyAnalytics = require('./PropertyAnalytics')(sequelize, DataTypes);
+
 // Define associations
 
 // User associations
@@ -150,6 +157,35 @@ Shortlist.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
 User.hasMany(Shortlist, { foreignKey: 'user_id', as: 'shortlist' });
 Property.hasMany(Shortlist, { foreignKey: 'property_id', as: 'shortlists' });
 
+// Phase 8 Associations
+
+// VirtualTour associations
+VirtualTour.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
+Property.hasMany(VirtualTour, { foreignKey: 'property_id', as: 'virtualTours' });
+
+// VideoCallTour associations
+VideoCallTour.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
+VideoCallTour.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
+VideoCallTour.belongsTo(User, { foreignKey: 'agent_id', as: 'agent' });
+Property.hasMany(VideoCallTour, { foreignKey: 'property_id', as: 'videoCallTours' });
+User.hasMany(VideoCallTour, { foreignKey: 'user_id', as: 'videoCallTours' });
+
+// AIRecommendation associations
+AIRecommendation.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
+AIRecommendation.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
+User.hasMany(AIRecommendation, { foreignKey: 'user_id', as: 'recommendations' });
+Property.hasMany(AIRecommendation, { foreignKey: 'property_id', as: 'recommendations' });
+
+// HomeLoanApplication associations
+HomeLoanApplication.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
+HomeLoanApplication.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
+User.hasMany(HomeLoanApplication, { foreignKey: 'user_id', as: 'loanApplications' });
+Property.hasMany(HomeLoanApplication, { foreignKey: 'property_id', as: 'loanApplications' });
+
+// PropertyAnalytics associations
+PropertyAnalytics.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
+Property.hasMany(PropertyAnalytics, { foreignKey: 'property_id', as: 'analytics' });
+
 module.exports = {
   sequelize,
   User,
@@ -175,5 +211,11 @@ module.exports = {
   PremiumMembership,
   RecentlyViewed,
   Shortlist,
-  LocalityInsights
+  LocalityInsights,
+  // Phase 8 Models
+  VirtualTour,
+  VideoCallTour,
+  AIRecommendation,
+  HomeLoanApplication,
+  PropertyAnalytics
 };

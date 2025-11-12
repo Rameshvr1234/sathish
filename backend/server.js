@@ -41,6 +41,13 @@ const shortlistRoutes = require('./routes/shortlistRoutes');
 const localityInsightsRoutes = require('./routes/localityInsightsRoutes');
 const priceTrendsRoutes = require('./routes/priceTrendsRoutes');
 
+// Phase 8 Routes
+const virtualTourRoutes = require('./routes/virtualTourRoutes');
+const videoCallTourRoutes = require('./routes/videoCallTourRoutes');
+const aiRecommendationRoutes = require('./routes/aiRecommendationRoutes');
+const homeLoanRoutes = require('./routes/homeLoanRoutes');
+const analyticsRoutes = require('./routes/analyticsRoutes');
+
 // Import error handler
 const errorHandler = require('./middleware/errorHandler');
 
@@ -124,6 +131,13 @@ app.use('/api/recently-viewed', recentlyViewedRoutes);
 app.use('/api/shortlist', shortlistRoutes);
 app.use('/api/localities', localityInsightsRoutes);
 app.use('/api/price-trends', priceTrendsRoutes);
+
+// Phase 8 API Routes
+app.use('/api/virtual-tours', virtualTourRoutes);
+app.use('/api/video-call-tours', videoCallTourRoutes);
+app.use('/api/ai-recommendations', aiRecommendationRoutes);
+app.use('/api/home-loans', homeLoanRoutes);
+app.use('/api/analytics', analyticsRoutes);
 
 // Socket.io connection handling
 io.on('connection', (socket) => {
