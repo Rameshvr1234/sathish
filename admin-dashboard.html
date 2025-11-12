@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - PropHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-page">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-home"></i>
+                <span>PropHub</span>
+            </div>
+            <button class="sidebar-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <div class="sidebar-user">
+            <img src="https://ui-avatars.com/api/?name=Admin&background=667eea&color=fff&size=48" alt="Admin">
+            <div class="user-info">
+                <h4>Super Admin</h4>
+                <p>admin@prophub.com</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active">
+                <i class="fas fa-chart-line"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-building"></i>
+                <span>Properties</span>
+                <span class="badge">15</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Approvals</span>
+                <span class="badge badge-danger">8</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-users"></i>
+                <span>Users</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-handshake"></i>
+                <span>Service Bookings</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-rupee-sign"></i>
+                <span>Payments</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Branches</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-chart-bar"></i>
+                <span>Reports</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+        <!-- Top Bar -->
+        <header class="admin-header">
+            <div class="header-left">
+                <h1>Dashboard Overview</h1>
+                <p>Welcome back, here's what's happening</p>
+            </div>
+            <div class="header-right">
+                <button class="header-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">5</span>
+                </button>
+                <button class="header-btn">
+                    <i class="fas fa-envelope"></i>
+                    <span class="notification-badge">12</span>
+                </button>
+                <div class="user-dropdown">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=667eea&color=fff&size=40" alt="Admin">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Stats Cards -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                    <i class="fas fa-building"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>5,248</h3>
+                    <p>Total Properties</p>
+                    <span class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 12% vs last month
+                    </span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>12,458</h3>
+                    <p>Total Users</p>
+                    <span class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 8% vs last month
+                    </span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>24</h3>
+                    <p>Pending Approvals</p>
+                    <span class="stat-change negative">
+                        <i class="fas fa-arrow-down"></i> Needs attention
+                    </span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">
+                    <i class="fas fa-rupee-sign"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>₹2.4L</h3>
+                    <p>Revenue (This Month)</p>
+                    <span class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 15% vs last month
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts and Tables Grid -->
+        <div class="content-grid">
+            <!-- Pending Approvals -->
+            <div class="dashboard-card large">
+                <div class="card-header">
+                    <h2>Pending Property Approvals</h2>
+                    <button class="btn btn-sm btn-primary">View All</button>
+                </div>
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Owner</th>
+                                <th>Location</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="property-cell">
+                                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=60&h=60&fit=crop" alt="Property">
+                                        <div>
+                                            <strong>Modern Villa</strong>
+                                            <span>3 BHK, 1500 sqft</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>John Doe</td>
+                                <td>Saravanampatti</td>
+                                <td>₹45,00,000</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td>
+                                    <button class="btn-icon btn-success"><i class="fas fa-check"></i></button>
+                                    <button class="btn-icon btn-danger"><i class="fas fa-times"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="property-cell">
+                                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=60&h=60&fit=crop" alt="Property">
+                                        <div>
+                                            <strong>DTCP Plot</strong>
+                                            <span>2400 sqft</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Sarah Smith</td>
+                                <td>Kovilpalayam</td>
+                                <td>₹12,00,000</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td>
+                                    <button class="btn-icon btn-success"><i class="fas fa-check"></i></button>
+                                    <button class="btn-icon btn-danger"><i class="fas fa-times"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Recent Service Bookings -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h2>Recent Bookings</h2>
+                    <a href="#">View All</a>
+                </div>
+                <div class="booking-list">
+                    <div class="booking-item">
+                        <div class="booking-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="booking-info">
+                            <h4>Land Survey</h4>
+                            <p>John Doe - Coimbatore</p>
+                            <span class="booking-time">2 hours ago</span>
+                        </div>
+                        <div class="booking-price">₹8,000</div>
+                    </div>
+                    <div class="booking-item">
+                        <div class="booking-icon">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <div class="booking-info">
+                            <h4>Legal Support</h4>
+                            <p>Sarah Smith - Salem</p>
+                            <span class="booking-time">5 hours ago</span>
+                        </div>
+                        <div class="booking-price">₹15,000</div>
+                    </div>
+                    <div class="booking-item">
+                        <div class="booking-icon">
+                            <i class="fas fa-hammer"></i>
+                        </div>
+                        <div class="booking-info">
+                            <h4>2D & 3D Plans</h4>
+                            <p>Mike Johnson - Tirupur</p>
+                            <span class="booking-time">1 day ago</span>
+                        </div>
+                        <div class="booking-price">₹25,000</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="dashboard-card">
+                <div class="card-header">
+                    <h2>Quick Statistics</h2>
+                </div>
+                <div class="quick-stats">
+                    <div class="quick-stat-item">
+                        <div class="quick-stat-label">Active Listings</div>
+                        <div class="quick-stat-value">4,850</div>
+                        <div class="quick-stat-bar">
+                            <div class="progress-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="quick-stat-item">
+                        <div class="quick-stat-label">SV Verified</div>
+                        <div class="quick-stat-value">2,145</div>
+                        <div class="quick-stat-bar">
+                            <div class="progress-fill" style="width: 65%"></div>
+                        </div>
+                    </div>
+                    <div class="quick-stat-item">
+                        <div class="quick-stat-label">Featured Properties</div>
+                        <div class="quick-stat-value">324</div>
+                        <div class="quick-stat-bar">
+                            <div class="progress-fill" style="width: 45%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Sidebar toggle
+        const sidebarToggle = document.querySelector('.sidebar-toggle');
+        const sidebar = document.querySelector('.admin-sidebar');
+
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('collapsed');
+        });
+
+        // Approval actions
+        document.querySelectorAll('.btn-success').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (confirm('Approve this property?')) {
+                    alert('Property approved successfully!');
+                }
+            });
+        });
+
+        document.querySelectorAll('.btn-danger').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (confirm('Reject this property?')) {
+                    alert('Property rejected!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
