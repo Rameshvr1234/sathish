@@ -14,6 +14,10 @@ import ServiceBooking from './pages/services/ServiceBooking'
 import MyBookings from './pages/services/MyBookings'
 import Chat from './pages/chat/Chat'
 import Profile from './pages/Profile'
+import RecentlyViewedPage from './pages/RecentlyViewedPage'
+import ShortlistPage from './pages/ShortlistPage'
+import LocalityInsightsPage from './pages/LocalityInsightsPage'
+import PropertyComparisonPage from './pages/PropertyComparisonPage'
 import NotFound from './pages/NotFound'
 
 function App() {
@@ -41,6 +45,8 @@ function App() {
         <Route path="register" element={<Register />} />
         <Route path="properties" element={<PropertyList />} />
         <Route path="properties/:id" element={<PropertyDetail />} />
+        <Route path="localities/:localityName" element={<LocalityInsightsPage />} />
+        <Route path="compare" element={<PropertyComparisonPage />} />
 
         {/* Protected Routes */}
         <Route
@@ -88,6 +94,22 @@ function App() {
           element={
             <ProtectedRoute>
               <Chat />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="recently-viewed"
+          element={
+            <ProtectedRoute>
+              <RecentlyViewedPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="shortlist"
+          element={
+            <ProtectedRoute>
+              <ShortlistPage />
             </ProtectedRoute>
           }
         />

@@ -1,0 +1,103 @@
+# Railway Environment Variables Template
+# Copy these variables to Railway Dashboard → Your Project → Variables
+
+# ============================================
+# REQUIRED VARIABLES (Must set before deploy)
+# ============================================
+
+NODE_ENV=production
+PORT=5000
+
+# JWT Secret (Generate with: openssl rand -base64 32)
+JWT_SECRET=GENERATE_A_RANDOM_32_CHARACTER_STRING_HERE
+JWT_EXPIRE=7d
+JWT_COOKIE_EXPIRE=7
+
+# Razorpay (Get from: https://dashboard.razorpay.com)
+# IMPORTANT: Use LIVE keys for production
+RAZORPAY_KEY_ID=rzp_live_your_key_id
+RAZORPAY_KEY_SECRET=your_razorpay_secret
+
+# Frontend URL (Set after deploying frontend to Vercel)
+FRONTEND_URL=https://your-frontend.vercel.app
+
+# ============================================
+# DATABASE VARIABLES (Auto-set by Railway)
+# ============================================
+# Railway will automatically inject these when you add PostgreSQL service
+# You can use either DATABASE_URL or individual variables
+
+# Option 1: Use DATABASE_URL (Recommended)
+DATABASE_URL=${{Postgres.DATABASE_URL}}
+
+# Option 2: Or use individual variables
+DB_HOST=${{Postgres.PGHOST}}
+DB_PORT=${{Postgres.PGPORT}}
+DB_NAME=${{Postgres.PGDATABASE}}
+DB_USER=${{Postgres.PGUSER}}
+DB_PASSWORD=${{Postgres.PGPASSWORD}}
+
+# ============================================
+# OPTIONAL VARIABLES (Add when ready)
+# ============================================
+
+# AWS S3 (For image uploads - recommended for production)
+# AWS_ACCESS_KEY_ID=your_aws_access_key
+# AWS_SECRET_ACCESS_KEY=your_aws_secret_key
+# AWS_S3_BUCKET=your-production-bucket-name
+# AWS_REGION=ap-south-1
+
+# SendGrid (For email notifications)
+# SENDGRID_API_KEY=SG.your_sendgrid_key
+# FROM_EMAIL=noreply@yourdomain.com
+# FROM_NAME=Real Estate Portal
+
+# Twilio (For SMS notifications)
+# TWILIO_ACCOUNT_SID=your_twilio_sid
+# TWILIO_AUTH_TOKEN=your_twilio_token
+# TWILIO_PHONE_NUMBER=+1234567890
+
+# Redis (For caching - Railway offers Redis addon)
+# REDIS_HOST=${{Redis.REDIS_HOST}}
+# REDIS_PORT=${{Redis.REDIS_PORT}}
+# REDIS_PASSWORD=${{Redis.REDIS_PASSWORD}}
+
+# Super Admin (Default admin account)
+# SUPER_ADMIN_EMAIL=admin@yourdomain.com
+# SUPER_ADMIN_PASSWORD=YourSecurePassword123
+
+# File Upload Limits
+# MAX_FILE_SIZE=5242880
+# MAX_FILES=10
+
+# ============================================
+# DEPLOYMENT STEPS
+# ============================================
+
+# 1. Create Railway project and add PostgreSQL service
+# 2. Copy all REQUIRED variables above to Railway Variables tab
+# 3. Generate a strong JWT_SECRET (use: openssl rand -base64 32)
+# 4. Update RAZORPAY keys with LIVE keys (not test keys)
+# 5. Deploy backend first
+# 6. Get backend URL from Railway
+# 7. Deploy frontend to Vercel using backend URL
+# 8. Get frontend URL from Vercel
+# 9. Update FRONTEND_URL in Railway with Vercel URL
+# 10. Railway will auto-redeploy with new CORS settings
+
+# ============================================
+# AFTER DEPLOYMENT
+# ============================================
+
+# Run database migrations:
+# Method 1: Using Railway CLI
+#   railway run npm run migrate
+
+# Method 2: Using Railway Dashboard
+#   Go to your service → Deployments → Click on latest deployment
+#   Click "View Logs" and check if migrations ran
+#   If not, add a migration command in railway.json
+
+# Verify deployment:
+#   curl https://your-backend.railway.app/health
+#   Should return: {"success":true,"message":"Server is running",...}

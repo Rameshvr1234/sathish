@@ -1,0 +1,73 @@
+# Vercel Environment Variables Template
+# Add these to Vercel Dashboard → Your Project → Settings → Environment Variables
+
+# ============================================
+# REQUIRED VARIABLES
+# ============================================
+
+# Backend API URL (Get from Railway after backend deployment)
+VITE_API_URL=https://your-backend.railway.app/api
+
+# Razorpay Key ID (Same as backend - LIVE key for production)
+VITE_RAZORPAY_KEY_ID=rzp_live_your_key_id
+
+# ============================================
+# OPTIONAL VARIABLES
+# ============================================
+
+# Google Analytics (if you want to track analytics)
+# VITE_GA_TRACKING_ID=G-XXXXXXXXXX
+
+# Google Maps API (if you want to show property locations on map)
+# VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
+
+# Sentry DSN (for error tracking)
+# VITE_SENTRY_DSN=https://xxx@xxx.ingest.sentry.io/xxx
+
+# ============================================
+# DEPLOYMENT STEPS
+# ============================================
+
+# 1. Deploy backend to Railway FIRST
+# 2. Get backend URL from Railway (e.g., https://your-app.railway.app)
+# 3. Set VITE_API_URL to: https://your-backend.railway.app/api
+#    IMPORTANT: Add /api at the end!
+# 4. Set VITE_RAZORPAY_KEY_ID with LIVE key (not test key)
+# 5. Deploy to Vercel
+# 6. After deployment, get Vercel URL
+# 7. Update FRONTEND_URL in Railway with your Vercel URL
+# 8. Railway will auto-redeploy backend with correct CORS settings
+
+# ============================================
+# BUILD SETTINGS (Vercel Dashboard)
+# ============================================
+
+# Framework Preset: Vite
+# Root Directory: frontend
+# Build Command: npm run build
+# Output Directory: dist
+# Install Command: npm install
+# Node Version: 18.x
+
+# ============================================
+# DOMAIN SETTINGS (Optional)
+# ============================================
+
+# After deployment, you can add a custom domain:
+# 1. Go to Vercel Dashboard → Your Project → Settings → Domains
+# 2. Add your domain (e.g., yourdomain.com)
+# 3. Update DNS records as instructed by Vercel
+# 4. SSL certificate will be automatically provisioned
+
+# Don't forget to update FRONTEND_URL in Railway after adding custom domain!
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+# After deployment:
+# 1. Open your Vercel URL in browser
+# 2. Open browser console (F12)
+# 3. Check for any CORS errors
+# 4. Test user registration and login
+# 5. Verify API calls are going to correct backend URL

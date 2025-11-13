@@ -1,0 +1,276 @@
+.virtual-tour-viewer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+}
+
+.virtual-tour-loading,
+.virtual-tour-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #000;
+}
+
+.virtual-tour-error .ant-card {
+  text-align: center;
+}
+
+.virtual-tour-header {
+  background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.tour-info h2 {
+  color: #fff;
+  margin: 0;
+  font-size: 24px;
+}
+
+.tour-info p {
+  color: rgba(255,255,255,0.8);
+  margin: 5px 0 0;
+}
+
+.tour-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.tour-controls .ant-btn {
+  background: rgba(255,255,255,0.1);
+  border: none;
+}
+
+.tour-controls .ant-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.tour-main-viewer {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.panorama-viewer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #000;
+}
+
+.panorama-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: grab;
+}
+
+.panorama-image:active {
+  cursor: grabbing;
+}
+
+.panorama-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0,0,0,0.7);
+  padding: 15px 20px;
+  border-radius: 8px;
+}
+
+.panorama-overlay h3 {
+  color: #fff;
+  margin: 0;
+  font-size: 18px;
+}
+
+.external-tour {
+  width: 100%;
+  height: 100%;
+}
+
+.external-tour iframe {
+  border: none;
+}
+
+.tour-placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: #fff;
+  font-size: 18px;
+}
+
+.scene-navigation {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 5;
+}
+
+.scene-navigation .nav-button {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  backdrop-filter: blur(10px);
+}
+
+.scene-navigation .nav-button:hover:not(:disabled) {
+  background: rgba(255,255,255,0.3);
+}
+
+.scene-navigation .nav-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.scene-indicator {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  background: rgba(0,0,0,0.6);
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.tour-thumbnails {
+  background: rgba(0,0,0,0.9);
+  padding: 10px 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.tour-thumbnails .ant-tabs-nav {
+  margin-bottom: 0;
+}
+
+.tour-thumbnails .ant-tabs-tab {
+  padding: 8px;
+  margin: 0 5px;
+}
+
+.thumbnail-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  min-width: 80px;
+}
+
+.thumbnail-tab img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.ant-tabs-tab-active .thumbnail-tab img {
+  border-color: #1890ff;
+}
+
+.thumbnail-tab span {
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+
+.tour-instructions {
+  background: linear-gradient(0deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+  padding: 15px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.tour-instructions p {
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Fullscreen styles */
+.virtual-tour-viewer:fullscreen {
+  background: #000;
+}
+
+.virtual-tour-viewer:fullscreen .tour-thumbnails {
+  display: none;
+}
+
+.virtual-tour-viewer:fullscreen .scene-navigation {
+  bottom: 50px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .virtual-tour-header {
+    padding: 15px;
+  }
+
+  .tour-info h2 {
+    font-size: 18px;
+  }
+
+  .tour-info p {
+    display: none;
+  }
+
+  .tour-controls button span:not(.anticon) {
+    display: none;
+  }
+
+  .tour-thumbnails {
+    padding: 5px 10px;
+  }
+
+  .thumbnail-tab {
+    min-width: 60px;
+  }
+
+  .thumbnail-tab img {
+    width: 60px;
+    height: 45px;
+  }
+
+  .thumbnail-tab span {
+    font-size: 10px;
+  }
+
+  .scene-navigation {
+    bottom: 80px;
+  }
+
+  .tour-instructions {
+    padding: 10px;
+  }
+
+  .tour-instructions p {
+    font-size: 12px;
+  }
+}

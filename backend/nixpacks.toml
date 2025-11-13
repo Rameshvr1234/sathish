@@ -1,0 +1,12 @@
+# Nixpacks configuration for Railway
+
+[phases.setup]
+nixPkgs = ["nodejs-18_x", "postgresql"]
+
+[phases.install]
+cmds = ["npm ci --only=production"]
+
+[phases.build]
+
+[start]
+cmd = "node server.js"

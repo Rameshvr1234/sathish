@@ -18,6 +18,21 @@ const SiteVisit = require('./SiteVisit')(sequelize, DataTypes);
 const Chat = require('./Chat')(sequelize, DataTypes);
 const Message = require('./Message')(sequelize, DataTypes);
 const OfferNews = require('./OfferNews')(sequelize, DataTypes);
+const Review = require('./Review')(sequelize, DataTypes);
+const PropertyAlert = require('./PropertyAlert')(sequelize, DataTypes);
+const Builder = require('./Builder')(sequelize, DataTypes);
+const Project = require('./Project')(sequelize, DataTypes);
+const PremiumMembership = require('./PremiumMembership')(sequelize, DataTypes);
+const RecentlyViewed = require('./RecentlyViewed');
+const Shortlist = require('./Shortlist');
+const LocalityInsights = require('./LocalityInsights');
+
+// Phase 8 Models
+const VirtualTour = require('./VirtualTour')(sequelize, DataTypes);
+const VideoCallTour = require('./VideoCallTour')(sequelize, DataTypes);
+const AIRecommendation = require('./AIRecommendation')(sequelize, DataTypes);
+const HomeLoanApplication = require('./HomeLoanApplication')(sequelize, DataTypes);
+const PropertyAnalytics = require('./PropertyAnalytics')(sequelize, DataTypes);
 
 // Define associations
 
@@ -76,9 +91,8 @@ Lead.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
 Lead.belongsTo(Branch, { foreignKey: 'branch_id', as: 'branch' });
 Lead.hasMany(SiteVisit, { foreignKey: 'lead_id', as: 'siteVisits' });
 
-Property.hasMany(Lead, { foreignKey: 'property_id', as: 'leads' });
-User.hasMany(Lead, { foreignKey: 'user_id', as: 'leads' });
-Branch.hasMany(Lead, { foreignKey: 'branch_id', as: 'leads' });
+User.hasMany(Lead, { foreignKey: 'user_id', as: 'userLeads' });
+Branch.hasMany(Lead, { foreignKey: 'branch_id', as: 'branchLeads' });
 
 // Site Visit associations
 SiteVisit.belongsTo(Lead, { foreignKey: 'lead_id', as: 'lead' });
@@ -101,11 +115,74 @@ User.hasMany(Chat, { foreignKey: 'user2_id', as: 'chatsAsUser2' });
 Message.belongsTo(Chat, { foreignKey: 'chat_id', as: 'chat' });
 Message.belongsTo(User, { foreignKey: 'sender_id', as: 'sender' });
 
-Chat.hasMany(Message, { foreignKey: 'chat_id', as: 'messages' });
 User.hasMany(Message, { foreignKey: 'sender_id', as: 'sentMessages' });
 
 // Offer/News associations
 OfferNews.belongsTo(User, { foreignKey: 'created_by', as: 'creator' });
+
+// Review associations
+Review.belongsTo(User, { foreignKey: 'user_id', as: 'reviewer' });
+Review.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
+Property.hasMany(Review, { foreignKey: 'property_id', as: 'reviews' });
+User.hasMany(Review, { foreignKey: 'user_id', as: 'reviews' });
+
+// PropertyAlert associations
+PropertyAlert.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
+User.hasMany(PropertyAlert, { foreignKey: 'user_id', as: 'propertyAlerts' });
+
+// Builder associations
+Builder.hasMany(Project, { foreignKey: 'builder_id', as: 'projects' });
+Builder.hasMany(Review, { foreignKey: 'builder_id', as: 'reviews' });
+
+// Project associations
+Project.belongsTo(Builder, { foreignKey: 'builder_id', as: 'builder' });
+Project.hasMany(Property, { foreignKey: 'project_id', as: 'properties' });
+Project.hasMany(Review, { foreignKey: 'property_id', as: 'reviews' });
+
+// PremiumMembership associations
+PremiumMembership.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
+User.hasMany(PremiumMembership, { foreignKey: 'user_id', as: 'memberships' });
+
+// RecentlyViewed associations
+RecentlyViewed.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
+RecentlyViewed.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
+User.hasMany(RecentlyViewed, { foreignKey: 'user_id', as: 'recentlyViewed' });
+Property.hasMany(RecentlyViewed, { foreignKey: 'property_id', as: 'views' });
+
+// Shortlist associations
+Shortlist.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
+Shortlist.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
+User.hasMany(Shortlist, { foreignKey: 'user_id', as: 'shortlist' });
+Property.hasMany(Shortlist, { foreignKey: 'property_id', as: 'shortlists' });
+
+// Phase 8 Associations
+
+// VirtualTour associations
+VirtualTour.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
+Property.hasMany(VirtualTour, { foreignKey: 'property_id', as: 'virtualTours' });
+
+// VideoCallTour associations
+VideoCallTour.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
+VideoCallTour.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
+VideoCallTour.belongsTo(User, { foreignKey: 'agent_id', as: 'agent' });
+Property.hasMany(VideoCallTour, { foreignKey: 'property_id', as: 'videoCallTours' });
+User.hasMany(VideoCallTour, { foreignKey: 'user_id', as: 'videoCallTours' });
+
+// AIRecommendation associations
+AIRecommendation.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
+AIRecommendation.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
+User.hasMany(AIRecommendation, { foreignKey: 'user_id', as: 'recommendations' });
+Property.hasMany(AIRecommendation, { foreignKey: 'property_id', as: 'recommendations' });
+
+// HomeLoanApplication associations
+HomeLoanApplication.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
+HomeLoanApplication.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
+User.hasMany(HomeLoanApplication, { foreignKey: 'user_id', as: 'loanApplications' });
+Property.hasMany(HomeLoanApplication, { foreignKey: 'property_id', as: 'loanApplications' });
+
+// PropertyAnalytics associations
+PropertyAnalytics.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
+Property.hasMany(PropertyAnalytics, { foreignKey: 'property_id', as: 'analytics' });
 
 module.exports = {
   sequelize,
@@ -124,5 +201,19 @@ module.exports = {
   SiteVisit,
   Chat,
   Message,
-  OfferNews
+  OfferNews,
+  Review,
+  PropertyAlert,
+  Builder,
+  Project,
+  PremiumMembership,
+  RecentlyViewed,
+  Shortlist,
+  LocalityInsights,
+  // Phase 8 Models
+  VirtualTour,
+  VideoCallTour,
+  AIRecommendation,
+  HomeLoanApplication,
+  PropertyAnalytics
 };

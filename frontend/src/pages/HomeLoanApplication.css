@@ -1,0 +1,74 @@
+.home-loan-application {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.application-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.application-header h1 {
+  margin: 0 0 16px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.property-info {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.application-content {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px;
+}
+
+.application-steps {
+  margin-bottom: 32px;
+}
+
+.form-step h2 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #000;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.form-actions button {
+  min-width: 120px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .application-header h1 {
+    font-size: 22px;
+  }
+
+  .application-steps .ant-steps-item-title {
+    font-size: 12px;
+  }
+
+  .form-step h2 {
+    font-size: 18px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+}

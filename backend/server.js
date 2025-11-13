@@ -29,6 +29,27 @@ const leadRoutes = require('./routes/leadRoutes');
 const reportRoutes = require('./routes/reportRoutes');
 const offersNewsRoutes = require('./routes/offersNewsRoutes');
 const chatRoutes = require('./routes/chatRoutes');
+const calculatorRoutes = require('./routes/calculatorRoutes');
+const valuationRoutes = require('./routes/valuationRoutes');
+const reviewRoutes = require('./routes/reviewRoutes');
+const builderRoutes = require('./routes/builderRoutes');
+const projectRoutes = require('./routes/projectRoutes');
+const alertRoutes = require('./routes/alertRoutes');
+const membershipRoutes = require('./routes/membershipRoutes');
+const recentlyViewedRoutes = require('./routes/recentlyViewedRoutes');
+const shortlistRoutes = require('./routes/shortlistRoutes');
+const localityInsightsRoutes = require('./routes/localityInsightsRoutes');
+const priceTrendsRoutes = require('./routes/priceTrendsRoutes');
+
+// Phase 8 Routes
+const virtualTourRoutes = require('./routes/virtualTourRoutes');
+const videoCallTourRoutes = require('./routes/videoCallTourRoutes');
+const aiRecommendationRoutes = require('./routes/aiRecommendationRoutes');
+const homeLoanRoutes = require('./routes/homeLoanRoutes');
+const analyticsRoutes = require('./routes/analyticsRoutes');
+
+// SEO Routes
+const seoRoutes = require('./routes/seoRoutes');
 
 // Import error handler
 const errorHandler = require('./middleware/errorHandler');
@@ -102,6 +123,35 @@ app.use('/api/leads', leadRoutes);
 app.use('/api/reports', reportRoutes);
 app.use('/api/offers-news', offersNewsRoutes);
 app.use('/api/chat', chatRoutes);
+app.use('/api/calculators', calculatorRoutes);
+app.use('/api/valuation', valuationRoutes);
+app.use('/api/reviews', reviewRoutes);
+app.use('/api/builders', builderRoutes);
+app.use('/api/projects', projectRoutes);
+app.use('/api/alerts', alertRoutes);
+app.use('/api/membership', membershipRoutes);
+app.use('/api/recently-viewed', recentlyViewedRoutes);
+app.use('/api/shortlist', shortlistRoutes);
+app.use('/api/localities', localityInsightsRoutes);
+app.use('/api/price-trends', priceTrendsRoutes);
+
+// Phase 8 API Routes
+app.use('/api/virtual-tours', virtualTourRoutes);
+app.use('/api/video-call-tours', videoCallTourRoutes);
+app.use('/api/ai-recommendations', aiRecommendationRoutes);
+app.use('/api/home-loans', homeLoanRoutes);
+app.use('/api/analytics', analyticsRoutes);
+
+// SEO API Routes
+app.use('/api/seo', seoRoutes);
+
+// SEO Files - Serve at root level for better SEO
+app.get('/sitemap.xml', (req, res) => {
+  res.redirect('/api/seo/sitemap.xml');
+});
+app.get('/robots.txt', (req, res) => {
+  res.redirect('/api/seo/robots.txt');
+});
 
 // Socket.io connection handling
 io.on('connection', (socket) => {
