@@ -103,3 +103,6 @@ exports.authorizeBranch = async (req, res, next) => {
     });
   }
 };
+
+// Alias for backward compatibility
+exports.authenticateToken = exports.protect;

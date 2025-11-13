@@ -91,9 +91,8 @@ Lead.belongsTo(User, { foreignKey: 'user_id', as: 'user' });
 Lead.belongsTo(Branch, { foreignKey: 'branch_id', as: 'branch' });
 Lead.hasMany(SiteVisit, { foreignKey: 'lead_id', as: 'siteVisits' });
 
-Property.hasMany(Lead, { foreignKey: 'property_id', as: 'leads' });
-User.hasMany(Lead, { foreignKey: 'user_id', as: 'leads' });
-Branch.hasMany(Lead, { foreignKey: 'branch_id', as: 'leads' });
+User.hasMany(Lead, { foreignKey: 'user_id', as: 'userLeads' });
+Branch.hasMany(Lead, { foreignKey: 'branch_id', as: 'branchLeads' });
 
 // Site Visit associations
 SiteVisit.belongsTo(Lead, { foreignKey: 'lead_id', as: 'lead' });
@@ -116,7 +115,6 @@ User.hasMany(Chat, { foreignKey: 'user2_id', as: 'chatsAsUser2' });
 Message.belongsTo(Chat, { foreignKey: 'chat_id', as: 'chat' });
 Message.belongsTo(User, { foreignKey: 'sender_id', as: 'sender' });
 
-Chat.hasMany(Message, { foreignKey: 'chat_id', as: 'messages' });
 User.hasMany(Message, { foreignKey: 'sender_id', as: 'sentMessages' });
 
 // Offer/News associations
