@@ -26,7 +26,6 @@ const PremiumMembership = require('./PremiumMembership')(sequelize, DataTypes);
 const RecentlyViewed = require('./RecentlyViewed');
 const Shortlist = require('./Shortlist');
 const LocalityInsights = require('./LocalityInsights');
-const PrintCostingAgent = require('./PrintCostingAgent');
 
 // Phase 8 Models
 const VirtualTour = require('./VirtualTour')(sequelize, DataTypes);
@@ -185,10 +184,6 @@ Property.hasMany(HomeLoanApplication, { foreignKey: 'property_id', as: 'loanAppl
 PropertyAnalytics.belongsTo(Property, { foreignKey: 'property_id', as: 'property' });
 Property.hasMany(PropertyAnalytics, { foreignKey: 'property_id', as: 'analytics' });
 
-// PrintCostingAgent associations
-PrintCostingAgent.belongsTo(User, { foreignKey: 'userId', as: 'user' });
-User.hasMany(PrintCostingAgent, { foreignKey: 'userId', as: 'printQuotes' });
-
 module.exports = {
   sequelize,
   User,
@@ -215,7 +210,6 @@ module.exports = {
   RecentlyViewed,
   Shortlist,
   LocalityInsights,
-  PrintCostingAgent,
   // Phase 8 Models
   VirtualTour,
   VideoCallTour,
