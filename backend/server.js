@@ -40,6 +40,7 @@ const recentlyViewedRoutes = require('./routes/recentlyViewedRoutes');
 const shortlistRoutes = require('./routes/shortlistRoutes');
 const localityInsightsRoutes = require('./routes/localityInsightsRoutes');
 const priceTrendsRoutes = require('./routes/priceTrendsRoutes');
+const printCostingRoutes = require('./routes/printCostingRoutes');
 
 // Phase 8 Routes
 const virtualTourRoutes = require('./routes/virtualTourRoutes');
@@ -134,6 +135,7 @@ app.use('/api/recently-viewed', recentlyViewedRoutes);
 app.use('/api/shortlist', shortlistRoutes);
 app.use('/api/localities', localityInsightsRoutes);
 app.use('/api/price-trends', priceTrendsRoutes);
+app.use('/api/print-costing', printCostingRoutes);
 
 // Phase 8 API Routes
 app.use('/api/virtual-tours', virtualTourRoutes);
